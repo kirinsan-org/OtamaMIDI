@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html ng-app="OtamaMIDI">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Test</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body ng-controller="Main">
+  <header id="headbar">
+    <h1>
+      <img src="yayane.png" width="300" alt="">
+    </h1>
+  </header>
+
+  <section id="hud">
+    <div id="current-key">
+      <ul id="note">
+        <li ng-repeat="note in midiNotes track by $index">{{note}}</li>
+      </ul>
+    </div>
+  </section>
+  <hr>
+
+  <section id="pad">
+    <ul id="soundFx">
+      <li><a href="" ng-click="play('kirinsan')">きりんさん</a>
+      </li>
+      <li><a href="" ng-click="play('iiyone')">いいよね</a>
+      </li>
+      <li><a href="" ng-click="play('yeah')">Yeah!</a>
+      </li>
+      <li><a href="" ng-click="play('oshimai')">おしまい</a>
+      </li>
+    </ul>
+  </section>
+  <hr>
+
+  <section id="settings">
+    <h1>セッティング</h1>
+    <div class="scale">
+      <h2>音階</h2>
+      <select ng-model="scale" ng-options="scale.name for scale in scales"></select>
+    </div>
+
+    <div class="voice">
+      <h2>音色</h2>
+      <select ng-model="tone" ng-options="tone for tone in tones"></select>
+    </div>
+
+  </section>
+  <hr>
+
+  <script src="bower_components/boombox.js/boombox.min.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.min.js"></script>
+  <script src="miku.js"></script>
+  <script src="midiNoteDetector.js"></script>
+  <script src="audioContext.js"></script>
+  <script src="otama.js"></script>
+</body>
+
+</html>
