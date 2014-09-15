@@ -1,0 +1,28 @@
+{
+  "name": "OtamaMIDI",
+  "version": "1.0",
+  "homepage": "https://github.com/kirinsan-org/OtamaMIDI",
+  "authors": [
+    "kirinsan.org"
+  ],
+  "description": "Otamatone to MIDI",
+  "main": "index.html",
+  "keywords": [
+    "webaudio",
+    "webmidi"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-touch": "~1.2.24",
+    "angular": "~1.2.24",
+    "jquery": "~2.1.1",
+    "boombox.js": "~1.0.0"
+  }
+}
