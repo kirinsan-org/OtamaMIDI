@@ -61,7 +61,7 @@
       if (Miku.instance) return resolve(Miku.instance);
 
       // request MIDI Access
-      window.navigator.requestMIDIAccess({sysex: true}).then(function(midi) {
+      window.navigator.requestMIDIAccess(/*{sysex: true}*/).then(function(midi) {
         var miku = new Miku(midi);
 
         // auto detect input
