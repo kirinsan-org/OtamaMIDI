@@ -87,9 +87,9 @@ angular.module('OtamaMIDI', ['ngTouch', 'AudioContext', 'MidiNoteDetector']).fac
           moveNotesDisp(filteredNote);
 
           // 楽器音の場合はノートオフを送る
-          if (miku.channel !== 0) miku.noteOff(prevNote);
+          if (miku.channel !== 0) miku.noteOff(prevNote, 127, 0);
 
-          miku.noteOn(filteredNote, 127);
+          miku.noteOn(filteredNote, 127, 0);
           prevNote = filteredNote;
         }
       }).on('noteOff', function() {

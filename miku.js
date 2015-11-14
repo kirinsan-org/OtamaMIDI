@@ -61,13 +61,16 @@
       if (Miku.instance) return resolve(Miku.instance);
 
       // request MIDI Access
-      window.navigator.requestMIDIAccess(/*{sysex: true}*/).then(function(midi) {
+      window.navigator.requestMIDIAccess({sysex: true}).then(function(midi) {
         var miku = new Miku(midi);
 
         // auto detect input
         var inputs = [];
         if (midi.inputs.values) {
-          // TODO
+          var it = midi.inputs.values();
+          for(var o = it.next(); !o.done; o = it.next()){
+            inputs.push(o.value);
+          }
         } else {
           inputs = midi.inputs();
         }
@@ -87,7 +90,10 @@
         // auto detect output
         var outputs = [];
         if (midi.outputs.values) {
-          // TODO
+          var it = midi.outputs.values();
+          for(var o = it.next(); !o.done; o = it.next()){
+            outputs.push(o.value);
+          }
         } else {
           outputs = midi.outputs();
         }
